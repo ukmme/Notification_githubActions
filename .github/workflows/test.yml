@@ -22,6 +22,6 @@ jobs:
         with:
           to: 'utkarshamendhe7@gmail.com'
           subject: 'github workflow'
-          body: '<em>This is a notification from GitHub actions.</em>'
+          body: '<em>trrigged by: ${{ github.actor }}</em>'
           type: 'text/html'
           # attachment: 'artifacts.zip'
