@@ -13,5 +13,15 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          Add other actions to build,
+          echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: notify
+        if: always
+        uses: cinotify/github-action@main
+        with:
+          to: 'utkarshamendhe7@gmail.com'
+          subject: 'github workflow'
+          body: '<em>This is a notification from GitHub actions.</em>'
+          type: 'text/html'
+          # attachment: 'artifacts.zip'
