@@ -20,8 +20,8 @@ jobs:
         if: always()
         uses: cinotify/github-action@main
         with:
-          to: 'utkarshamendhe7@gmail.com, ukmendhe03@gmail.com'
+          to: 'utkarshamendhe7@gmail.com, pavansai07784@gmail.com'
           subject: 'github workflow'
-          body: '<em>trrigged by: ${{ github.actor }}</em>''<em>${{ job.status }}</em>'
+          body: '<em>trrigged by: ${{ github.actor }},${{ job.status }}</em>'
           type: 'text/html'
           # attachment: 'artifacts.zip'
