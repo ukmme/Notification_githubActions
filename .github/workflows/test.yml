@@ -16,12 +16,29 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: notify
-        if: always()
-        uses: cinotify/github-action@main
+      # - name: notify
+      #   if: always()
+      #   uses: cinotify/github-action@main
+      #   with:
+      #     to: 'utkarshamendhe7@gmail.com'
+      #     subject: 'github workflow'
+      #     body: '<em>trrigged by: ${{ github.actor }},${{ job.status }}</em>'
+      #     type: 'text/html'
+          # attachment: 'artifacts.zip'\
+
+
+      
+      - name: Send email
+        uses: dawidd6/action-send-mail@v5
         with:
-          to: 'utkarshamendhe7@gmail.com, pavansai07784@gmail.com'
-          subject: 'github workflow'
-          body: '<em>trrigged by: ${{ github.actor }},${{ job.status }}</em>'
-          type: 'text/html'
-          # attachment: 'artifacts.zip'
+          server_address: smtp.gmail.com
+          server_port: 587
+          # username: ${{ secrets.EMAIL_USERNAME }}
+          # password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: GitHub Actions Notification
+          to: "utkarshamendhe7@gamil.com"
+          from: "mendheutk@gmail.com"
+          body: "Your GitHub Actions workflow has completed."
+          secure: true
+
+  
